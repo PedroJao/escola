@@ -10,6 +10,10 @@
     list-style: none;
     color: black;
 }
+body{
+    display: flex;
+    flex-direction: column;
+}
 header{
     position: fixed;
     width: 100%;
@@ -50,8 +54,9 @@ footer{
     background-color: #3dbcbe;
 }
 main{
-    height: 100px;
+    height: 200px;
     width: 100%;
+    background-color: bisque;
     margin-top: 200px;
 }
 /*--------------------PÁGINA INICIAL-------------------*/
@@ -59,11 +64,14 @@ main{
 
 
 /*-----------------PÁGINA DE INSCRIÇÃO-----------------*/
-
+.header3{
+    display: none;
+}
 
 
 /*--------------------PÁGINA DE LOGIN------------------*/
-
-
+.header2{
+    display: none;
+}
 
 /*--------------------PÁGINA SOBRE NÓS-----------------*/
