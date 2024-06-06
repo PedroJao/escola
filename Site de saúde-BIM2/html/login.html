@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
 </head>
-<body>
+<body class="bodylog">
     <header class="header2" id="header2">
         <img src="../logo.png" alt="">
         <nav>
@@ -20,14 +20,16 @@
             </ul>
         </nav>
     </header>
-    <main class="main1" id="main1">
+    <a href="index.html" id="voltar">&leftarrow; Voltar para a tela inicial</a>
+    <main class="main2 login" id="main2">
+        <img src="..//logo.png" alt="" style="width: 180px;" id="logolog">
         <h1>Login</h1>
-        <form>
+        <form action="submit">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
-            <button type="submit">Entrar</button>
+            <button type="submit" id="submit" name="submit">Entrar</button>
         </form>
     </main>
     <footer class="foot2" id="foot2">
