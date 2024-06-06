@@ -67,6 +67,9 @@ footer{
     bottom: 0;
 }
 footer>div{
+    position: absolute;
+    right: 0;
+    bottom: 0;
     float: right;
     background-color: #47DBDE;
     height: 290px;
@@ -79,7 +82,7 @@ footer>div>div{
     bottom: 0;
     background-color: #257778ab;
     width: 265px;
-    height: 250px;
+    height: 265px;
     border-top-left-radius: 100%;
 }
 footer>div>div>div{
@@ -88,7 +91,7 @@ footer>div>div>div{
     bottom: 0;
     background-color: #47dcdec8;
     width: 245px;
-    height: 230px;
+    height: 245px;
     border-top-left-radius: 100%;
 }
 footer>div>div>div>div{
@@ -97,7 +100,7 @@ footer>div>div>div>div{
     bottom: 0;
     background-color: #257778b4;
     width: 220px;
-    height: 210px;
+    height: 220px;
     border-top-left-radius: 100%;
 }
 footer>div>div>div>div>div{
@@ -106,7 +109,7 @@ footer>div>div>div>div>div{
     bottom: 0;
     background-color: #47DBDE;
     width: 190px;
-    height: 180px;
+    height: 190px;
     border-top-left-radius: 100%;
 }
 /*--------------------PÁGINA INICIAL-------------------*/
