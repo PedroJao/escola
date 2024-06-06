@@ -22,6 +22,7 @@ header{
     box-shadow: 5px 5px 5px #257678;
 }
 header>img{
+<<<<<<< HEAD
     width: 198px;
 }
 header>nav{
@@ -33,6 +34,12 @@ header>nav{
     right: 0;
     margin-bottom: 10px;
     margin-right: 10px;
+=======
+    width: 150px;
+}
+header>nav{
+    display: flex;
+>>>>>>> d3d04a0c70f4ba0a341c6ee73158416c5e0fea35
 }
 header>nav>ul{
     display: flex;
@@ -40,6 +47,7 @@ header>nav>ul{
     float: right;
 }
 header>nav>ul>li{
+<<<<<<< HEAD
     margin: 10px;
     transition: 0.5s;
 }
@@ -111,6 +119,12 @@ footer>div>div>div>div>div{
     width: 190px;
     height: 190px;
     border-top-left-radius: 100%;
+=======
+    padding: 5px;
+}
+main{
+margin-top: 200px;
+>>>>>>> d3d04a0c70f4ba0a341c6ee73158416c5e0fea35
 }
 /*--------------------PÁGINA INICIAL-------------------*/
 
@@ -190,6 +204,9 @@ footer>div>div>div>div>div{
 .header2{
     display: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3d04a0c70f4ba0a341c6ee73158416c5e0fea35
 
 /*--------------------PÁGINA SOBRE NÓS-----------------*/
