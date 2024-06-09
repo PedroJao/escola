@@ -8,7 +8,6 @@
     text-decoration: none;
     list-style: none;
     color: black;
-    gap: 20px;
 }
 body{
     display: flex;
@@ -196,110 +195,4 @@ input{
 }
 button{
     cursor: pointer;
-}
-/*--------------------PÁGINA INICIAL-------------------*/
-.foot1{
-    margin-top: 250vh;
-}
-.all{
-    display: flex;
-    flex-wrap: wrap;
-}
-.pl{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 20px;
-}
-.lep{
-    margin-top: 0px;
-    margin-left: -200px;
-}
-.pl>.polio, .lep{
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: auto 0;
-}
-.pl>.polio:hover>img, .lep.lep:hover>img{
-    filter: brightness(1);
-    transition: 0.3s;
-}
-.pl>.polio:hover>h1, .lep.lep:hover>h1{
-    color: #3cb2b4;
-    transition: 0.3s;
-}
-.pl .polio>img, .lep>img{
-    width: 500px;
-    height: 300px;
-    filter: brightness(0.7);
-    margin: 0;
-    transition: 0.3s;
-}
-.pl .polio>h1, .lep>h1{
-    font-size: 20pt;
-    transition: 0.3s;
-}
-.pl .polio>article, .lep>article{
-    font-size: 11pt;
-}
-.s2{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.s2>a{
-    width: 500px;
-    display: flex;
-}
-.s2>a:hover>img{
-    filter: brightness(1);
-    transition: 0.3s;
-}
-.s2>a:hover>article>h1{
-    color: #3cb2b4;
-    transition: 0.3s;
-}
-.s2>a>img{
-    width: 170px;
-    height: 130px;
-    filter: brightness(0.7);
-    transition: 0.3s;
-}
-.s2>a>article>h1{
-    font-size: 14pt;
-    transition: 0.3s;
-    }
-.s2>a>article>p{
-    font-size: 10pt;
-}
-#baba{
-    margin: 0 auto;
-    font-size: 20pt;
-    border-bottom: 2px solid black;
-    padding: 5px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-.videos{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.videos>article{
-    background-color: #4dedf038;
-    border-radius: 10px;
-    padding: 10px;
-}
-.videos>article>iframe{
-    border-radius: 20px;
-    filter: brightness(0.7);
-    transition: 0.3s;
-}
-.videos>article>iframe:hover{
-    filter: brightness(1);
-    transition: 0.3s;
 }
