@@ -380,3 +380,6 @@ button{
     background-color: rgb(44, 74, 131);
     transition: 0.3s;
 }
+table{
+    width: 750px;
+}
