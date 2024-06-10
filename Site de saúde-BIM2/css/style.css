@@ -199,7 +199,7 @@ button{
 }
 /*--------------------PÁGINA INICIAL-------------------*/
 .foot1{
-    margin-top: 250vh;
+    margin-top: 380vh;
 }
 .all{
     display: flex;
@@ -301,5 +301,82 @@ button{
 }
 .videos>article>iframe:hover{
     filter: brightness(1);
+    transition: 0.3s;
+}
+.calc{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.calc>form{
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    padding: 20px;
+    gap: none;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+}
+.calc>form>p{
+    font-size: 13pt;
+}
+.calc>div{
+    display: flex;
+    flex-direction: column;
+}
+.calc>form>div>p>label,input{
+    gap: 0px;
+}
+.calc>form>div>label{
+    font-size: 14pt;
+    font-weight: bold;
+}
+.calc>form>div>p{
+    font-size: 12pt;
+}
+.calc>form>div>p>input{
+    padding: 7px;
+    font-size: 13pt;
+    width: 90px;
+    border: 1px solid #bababa;
+    border-radius: 5px;
+}
+.sexo>p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sexo>p>#fem, #masc{
+    width: 140px;
+}
+.sexo>p>#fem{
+    border: 1px solid plum;
+    background-color: rgba(248, 180, 248, 0.096);
+}
+.sexo>p>#fem:focus{
+    border: 1px solid rgba(248, 180, 248, 0.096);
+    background-color: plum;
+}
+.sexo>p>#masc{
+    border: 1px solid cornflowerblue;
+    background-color: rgba(100, 148, 237, 0.041);
+}
+.sexo>p>#masc:focus{
+    border: 1px solid rgba(100, 148, 237, 0.041);
+    background-color: cornflowerblue;
+}
+.calc>form>input[type = "submit"]{
+    background-color: rgb(96, 141, 224);
+    color: aliceblue;
+    border-radius: 5px;
+    border: none;
+    font-size: 13pt;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+}
+.calc>form>input[type = "submit"]:hover{
+    background-color: rgb(44, 74, 131);
     transition: 0.3s;
 }

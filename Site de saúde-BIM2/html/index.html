@@ -71,7 +71,7 @@
         <h1 id="baba">Dicas profissionais para uma vida saudável</h1>
         <section class="videos">
             <article>
-                <iframe width="500" height="300" src="https://www.youtube.com/embed/6PVDpWX4fnY" frameborder="0"  referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+                <iframe width="500" height="300" src="https://www.youtube.com/embed/6PVDpWX4fnY" frameborder="0"  referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 <h1>Melhores exercícios para a terceira idade!</h1>
             </article>
             <article>
@@ -88,21 +88,93 @@
             </article>
         </section>
         <section class="calc">
-            <main>
+            <form action="submit">
                 <h1>Calculadora de IMC</h1>
                 <p>Para calcular seu IMC, por favor insira seus dados na nossa calculadora:</p>
-                <label for="sexo">Sexo:
-                </label>
-                <input type="button" value="Mulher">
-                <input type="button" value="Homem">
-                <label for="idade">Idade:</label>
-                <input type="number" name="" id="" placeholder="Ex:35"> anos
-                <label for="altura">Altura:</label>
-                <input type="number" name="" id="" placeholder="Ex:165"> cm
-                <label for="peso">Peso:</label>
-                <input type="number" name="" id=""> kg
-                <button onclick="calcula_imc()">Calcular</button>
-            </main>
+                <div class="sexo">
+                    <label for="sexo">Sexo:
+                    </label>
+                    <p>
+                        <input type="button" value="Mulher" name="sexo" id="fem">
+                        <input type="button" value="Homem" name="sexo" id="masc">
+                    </p>
+                </div>
+                <div>
+                    <label for="idade">Idade:</label>
+                    <p><input type="number" name="idade" id="idade" placeholder="Ex: 35" required> anos</p>
+                </div>
+                <div>
+                    <label for="altura">Altura:</label>
+                    <p><input type="number" name="altura" id="altura" placeholder="Ex: 165" required> cm</p>
+                </div>
+                <div>
+                    <label for="peso">Peso:</label>
+                    <p><input type="number" name="peso" id="peso" placeholder="Ex: 62,5" required> kg</p>
+                </div>
+                <input type="submit" value="CALCULAR" onclick="calculaimc()">
+            </form>
+            <aside>
+                <p></p>
+                <p></p>
+                <table class="imcmasc">
+                    <tr>
+                        <th></th>
+                        <th>IMC</th>
+                        <th>PESO</th>
+                    </tr>
+                    <tr>
+                        <td>Magreza</td>
+                        <td>&lt; 16 kg</td>
+                        <td>&lt; 81 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Normal</td>
+                        <td>16 a 23.6</td>
+                        <td>81 a 119.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Sobrepeso</td>
+                        <td>23.6 a 27.8</td>
+                        <td>119.5 a 140.7 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Obesidade</td>
+                        <td>&gt; 27.8</td>
+                        <td>&gt; 140.7 kg</td>
+                    </tr>
+                </table>
+            </aside>
+            <aside>
+                <p></p>
+                <p></p>
+                <table class="imcfem">
+                    <tr>
+                        <th></th>
+                        <th>IMC</th>
+                        <th>PESO</th>
+                    </tr>
+                    <tr>
+                        <td>Magreza</td>
+                        <td>&lt; 15.9 kg</td>
+                        <td>&lt; 80.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Normal</td>
+                        <td>15.9 a 24.2</td>
+                        <td>80.5 a 122.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Sobrepeso</td>
+                        <td>24.2 a 28.8</td>
+                        <td>122.5 a 145.8 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Obesidade</td>
+                        <td>&gt; 28.8</td>
+                        <td>&gt; 145.8 kg</td>
+                    </tr>
+                </table>
+            </aside>
         </section>
     </main>
     <footer class="foot1" id="foot1">
