@@ -57,8 +57,11 @@ header>nav>ul>li:hover{
     
 }
 main{
-    margin-top: 150px;
-
+    margin-top: 250px;
+    width: 800px;
+    height: 1000px;
+    margin: 50px auto;
+    border: 1px solid black;
 }
 footer{
     position: absolute;

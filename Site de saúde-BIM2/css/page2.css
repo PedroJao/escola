@@ -66,7 +66,7 @@ footer{
     height: 300px;
     background-color: #257678;
     bottom: 0;
-    top:90vh;
+    top:95vh;
 }
 footer>p{
     margin: 20px;
@@ -234,8 +234,9 @@ button{
 }
 .refs>img{
     width: 500px;
-    height: 300px;
+    height: 350px;
     background-color: lightgrey;
+    background: url("blob:https://web.whatsapp.com/1942adf0-d1ce-4d5e-a243-1837a3c0b2cc");
 }
 .refs>ul{
     display: flex;
