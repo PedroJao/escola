@@ -240,24 +240,27 @@ article>img, section>img {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#sintomas {
+ol#sintomas {
     list-style: none;
     display: flex;
     flex-direction: column;
 }
 
-#principal2 #sintomas .lista {
+#s6 ol .lista {
     color: black;
     width: 750px;
 }
 
-#principal2 #sintomas .lista a {
+#s6 #sintomas .lista a {
     margin-right: 10px;
     text-decoration: none;
     color: rgb(0, 47, 255);
     font-weight: bold;
 }
-#principal2>ol>p>a:hover{
+#principal2>#s6>ol>li>p{
+    max-width: 600px;
+}
+#principal2>#s6>ol>li>p:hover{
     border: none;
     box-shadow: none;
 }
