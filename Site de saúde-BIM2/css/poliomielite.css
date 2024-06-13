@@ -67,7 +67,7 @@ footer{
     height: 300px;
     background-color: #257678;
     bottom: 0;
-    top:630vh;
+    top:590vh;
 }
 footer>p{
     margin: 20px;
@@ -199,9 +199,11 @@ button{
 }
 /*-----------VACINA DA POLIO-------------*/
 #principal {
-    width: 800px;
-    height: auto;
+    width: 600px;
     margin: 160px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 h1{
     font-size: 25pt;

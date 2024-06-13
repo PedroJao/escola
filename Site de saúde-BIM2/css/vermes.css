@@ -69,7 +69,7 @@ footer{
     height: 300px;
     background-color: #257678;
     bottom: 0;
-    top:90vh;
+    top:740vh;
 }
 footer>p{
     margin: 20px;
@@ -198,4 +198,76 @@ input{
 }
 button{
     cursor: pointer;
+}
+/*----------------VERMES---------------*/
+img{
+    object-fit: cover;
+}
+#principal5 {
+    width: 600px;
+    height: auto;
+    margin: 160px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+h1{
+    font-size: 25pt;
+    padding-top: 10px;
+}
+
+#principal5 ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#principal5 ul li a{
+    text-decoration: none;
+    color: gray;
+    font-size: 13pt;
+}
+
+#principal5 ul li a:hover {
+    color: rgb(0, 47, 255);
+}
+
+article, section{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+h3 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+article.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+article>img, section>img {
+    width: 600px;
+    height: 450px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+.sintomas2  {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.sintomas2 li {
+    margin: 5px;
+}
+
+.sintomas2 li::before {
+        content: '•';
+        margin: 0 2px;
+        font-weight: bold;
+        color: rgb(0, 47, 255);
 }

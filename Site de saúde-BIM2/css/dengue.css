@@ -61,15 +61,16 @@ main{
     margin-top: 150px;
 
 }
-footer{
+.foot1{
     position: absolute;
     width: 100%;
     height: 300px;
     background-color: #257678;
     bottom: 0;
-    top:550vh;
+    top:540vh;
+    right: 0;
 }
-footer>p{
+.foot1>p{
     margin: 20px;
     position: absolute;
     z-index: 1;
@@ -80,14 +81,14 @@ footer>p{
     bottom: 0;
     backdrop-filter: blur(5px);
 }
-footer>ul{
+.foot1>ul{
     position: absolute;
     text-align: center;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
 }
-footer>ul>li{
-    margin-top: 10px;
-}
+
 #wh{
     display: flex;
     max-width: 250px;
@@ -101,14 +102,21 @@ footer>ul>li{
     width: 30px;
     height: 30px;
 }
-footer>ul>li>a,li>p{
+.foot1>ul>li>p{
     color: aliceblue;
     padding: 5px;
     padding-left: 30px;
     max-width: 200px;
     transition: 0.5s;
 }
-footer>ul>li>a:hover,li>p:hover{
+.foot1>ul>li>a{
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    padding-left: 30px;
+    max-width: 200px;
+    transition: 0.5s;
+}
+.foot1>ul>li>a:hover,li>p:hover{
     background-color: rgba(240, 248, 255, 0.19);
     border-radius: 5px;
     transition: 0.5s;
@@ -124,7 +132,7 @@ footer>ul>li>a:hover,li>p:hover{
     width: 20px;
     margin-top: 5px;
 }
-footer>div{
+.foot1>div{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -134,7 +142,7 @@ footer>div{
     width: 290px;
     border-top-left-radius: 100%;
 }
-footer>div>div{
+.foot1>div>div{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -143,7 +151,7 @@ footer>div>div{
     height: 265px;
     border-top-left-radius: 100%;
 }
-footer>div>div>div{
+.foot1>div>div>div{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -152,7 +160,7 @@ footer>div>div>div{
     height: 245px;
     border-top-left-radius: 100%;
 }
-footer>div>div>div>div{
+.foot1>div>div>div>div{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -161,7 +169,7 @@ footer>div>div>div>div{
     height: 220px;
     border-top-left-radius: 100%;
 }
-footer>div>div>div>div>div{
+.foot1>div>div>div>div>div{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -173,7 +181,7 @@ footer>div>div>div>div>div{
     justify-content: center;
     align-items: center;
 }
-footer>div>div>div>div>div>img{
+.foot1>div>div>div>div>div>img{
     width: 150px;
     position: absolute;
     right: 0;
@@ -197,10 +205,13 @@ input{
 button{
     cursor: pointer;
 }
-/*-----------VACINA DA POLIO-------------*/
+/*-----------DENGUE-------------*/
 #principal4 {
     width: 600px;
     margin: 160px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 h1{
     font-size: 25pt;
@@ -243,7 +254,6 @@ article>img, section>img {
     height: 450px;
     margin-top: 20px;
     margin-bottom: 20px;
-    object-fit: cover;
 }
 .sintomas2  {
     display: flex;

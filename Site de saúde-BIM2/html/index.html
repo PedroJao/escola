@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
 </head>
-<body>
+<body onload="carregar()">
     <header class="header1" id="header1">
         <img src="../logo.png" alt="">
         <nav>
@@ -53,7 +53,7 @@
                     <p>A dengue é uma doença que pode provocar sintomas como febre alta, dor de cabeça, manchas vermelhas na pele, náusea, dor no abdome...</p>
                 </article>
             </a>
-            <a href="vremes.html">
+            <a href="vermes.html">
                 <img src="../imgs/remedios-para-vermes_24815_l.webp" alt="">
                 <article>
                     <h1>10 principais remédios para vermes (e como tomar)</h1>
@@ -71,47 +71,47 @@
         <h1 id="baba">Dicas profissionais para uma vida saudável</h1>
         <section class="videos">
             <article>
-                <iframe width="650" height="450" src="https://www.youtube.com/embed/6PVDpWX4fnY" frameborder="0"  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe width="750" height="550" src="https://www.youtube.com/embed/6PVDpWX4fnY" frameborder="0"  referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 <h1>Melhores exercícios para a terceira idade!</h1>
             </article>
             <article>
-                <iframe width="650" height="450" src="https://www.youtube.com/embed/K4ULONjX2gs" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+                <iframe width="750" height="550" src="https://www.youtube.com/embed/K4ULONjX2gs" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
                 <h1>Dieta para ganho de massa muscular.</h1>
             </article>
             <article>
-                <iframe width="650" height="450" src="https://www.youtube.com/embed/w6lqLoSOcLI" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+                <iframe width="750" height="550" src="https://www.youtube.com/embed/w6lqLoSOcLI" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
                 <h1>5 dicas para ter uma vida saudável</h1>
             </article>
             <article>
-                <iframe width="650" height="450" src="https://www.youtube.com/embed/XNhxvIMqfGM"  frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="750" height="550" src="https://www.youtube.com/embed/XNhxvIMqfGM"  frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <h1>Como fortalecer o sistema imunológico</h1>
             </article>
         </section>
         <section class="calc">
-            <form action="submit">
+            <form>
                 <h1>Calculadora de IMC</h1>
                 <p>Para calcular seu IMC, por favor insira seus dados na nossa calculadora:</p>
                 <div class="sexo">
                     <label for="sexo">Sexo:
                     </label>
                     <p>
-                        <input type="button" value="Mulher" name="sexo" id="fem">
-                        <input type="button" value="Homem" name="sexo" id="masc">
+                        <input type="button" value="Mulher" name="sexo" id="fem" onclick="mulher()">
+                        <input type="button" value="Homem" name="sexo" id="masc" onclick="homem">
                     </p>
                 </div>
                 <div>
                     <label for="idade">Idade:</label>
-                    <p><input type="number" name="idade" id="idade" placeholder="Ex: 35" required> anos</p>
+                    <p><input type="text" name="idade" id="idade" placeholder="Ex: 35" required> anos</p>
                 </div>
                 <div>
                     <label for="altura">Altura:</label>
-                    <p><input type="number" name="altura" id="altura" placeholder="Ex: 165" required> cm</p>
+                    <p><input type="text" name="altura" id="altura" placeholder="Ex: 165" required> cm</p>
                 </div>
                 <div>
                     <label for="peso">Peso:</label>
-                    <p><input type="number" name="peso" id="peso" placeholder="Ex: 62,5" required> kg</p>
+                    <p><input type="text" name="peso" id="peso" placeholder="Ex: 62,5" required> kg</p>
                 </div>
-                <input type="submit" value="CALCULAR" onclick="calculaimc()">
+                <input type="button" value="CALCULAR" onclick="calculaimc()">
             </form>
             <article>
                 <aside>
@@ -124,24 +124,24 @@
                             <th>PESO</th>
                         </tr>
                         <tr>
-                            <td>Magreza</td>
-                            <td>&lt; 16 kg</td>
-                            <td>&lt; 81 kg</td>
+                            <td class="magreza">Magreza</td>
+                            <td class="magreza">&lt; 16 kg</td>
+                            <td class="magreza">&lt; 81 kg</td>
                         </tr>
                         <tr>
-                            <td>Normal</td>
-                            <td>16 a 23.6</td>
-                            <td>81 a 119.5 kg</td>
+                            <td class="normal">Normal</td>
+                            <td class="normal">16 a 23.6</td>
+                            <td class="normal">81 a 119.5 kg</td>
                         </tr>
                         <tr>
-                            <td>Sobrepeso</td>
-                            <td>23.6 a 27.8</td>
-                            <td>119.5 a 140.7 kg</td>
+                            <td class="sobrepeso">Sobrepeso</td>
+                            <td class="sobrepeso">23.6 a 27.8</td>
+                            <td class="sobrepeso">119.5 a 140.7 kg</td>
                         </tr>
                         <tr>
-                            <td>Obesidade</td>
-                            <td>&gt; 27.8</td>
-                            <td>&gt; 140.7 kg</td>
+                            <td class="obeso">Obesidade</td>
+                            <td class="obeso">&gt; 27.8</td>
+                            <td class="obeso">&gt; 140.7 kg</td>
                         </tr>
                     </table>
                 </aside>
@@ -204,6 +204,22 @@
             </div>
         </div>
     </footer>
-    <script src="../script.js"></script>
+    <script>
+        function mulher(){
+        let f = document.getElementById('fem')
+        f.style.backgroundColor = 'plum'
+        f.style.border = '1px solid rgba(248, 180, 248, 0.096)'
+        }
+        function homem(){
+            if(mulher()){
+                sexo = 'Masculino'
+            }
+        }
+        function calculaimc(){
+            if(mulher()){
+                document.querySelector("imcfem").display = 'block'
+            }
+        }
+    </script>
 </body>
 </html>
