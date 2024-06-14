@@ -234,13 +234,15 @@
             checkf = false;
             checkm = true ; 
         }
+
+        
+        var idade = document.getElementById('idade');
+        var altura = document.getElementById('altura');
+        var peso = document.getElementById('peso');
+        var alertaIdade = document.getElementById('alertaIdade');
+        var alertaAltura = document.getElementById('alertaAltura');
+        var alertaPeso = document.getElementById('alertaPeso');
         function calculaimc(){
-            var idade = document.getElementById('idade');
-            var altura = document.getElementById('altura');
-            var peso = document.getElementById('peso');
-            var alertaIdade = document.getElementById('alertaIdade');
-            var alertaAltura = document.getElementById('alertaAltura');
-            var alertaPeso = document.getElementById('alertaPeso');
             if (checkf == true){
                 tabelaf.style.display = 'block';
                 tabelam.style.display = 'none';
@@ -258,25 +260,29 @@
                 idade.style.border = '1px solid red';
                 camposVazios = true;
             }else{
-                if(idade.value > 119){
+                if (idade.value > 119){
                     alertaIdade.innerHTML = 'Idade máxima: 119 anos';
                     alertaIdade.style.color = 'red';
-                    idade.style.border = '1px solid red';
-
+                    idade.style.border = '1px solid red';     
                 }else{
                 alertaIdade.innerHTML = "";
                 idade.style.border = '1px solid #bababa';
                 }
             }
-            
             if (altura.value === ""){
                 alertaAltura.innerHTML = 'Preenchimento obrigatório!';
                 alertaAltura.style.color = 'red';
                 altura.style.border = '1px solid red';
                 camposVazios = true;
             }else{
-                alertaAltura.innerHTML = "";
-                altura.style.border = '1px solid #bababa';
+                if (altura.value > 225){
+                    alertaAltura.innerHTML = 'Altura máxima: 225cm';
+                    alertaAltura.style.color = 'red';
+                    altura.style.border = '1px solid red';    
+                }else{
+                    alertaAltura.innerHTML = "";
+                    altura.style.border = '1px solid #bababa';
+                }
             }
             if (peso.value === ""){
                 alertaPeso.innerHTML = 'Preenchimento obrigatório!';
@@ -284,10 +290,28 @@
                 peso.style.border = '1px solid red';
                 camposVazios = true;
             }else{
-                alertaPeso.innerHTML = "";
-                peso.style.border = '1px solid #bababa';
+                if (peso.value > 300){
+                alertaPeso.innerHTML = 'Peso máximo: 300Kg';
+                alertaPeso.style.color = 'red';
+                peso.style.border = '1px solid red';
+                    
+                }else{
+                    alertaPeso.innerHTML = "";
+                    peso.style.border = '1px solid #bababa';
+                }
             }
+            if(camposVazios == true){
+                tabelam.style.display = 'none';
+                tabelaf.style.display = 'none';
+            }
+            var imc = peso.value / (altura.value / 100) ** 2
+            var resm = document.getElementById('resm')
+            var resf = document.getElementById('resf')
+            var rescm = document.getElementById('rescm')
+            var rescf = document.getElementById('rescf')
+            resm.innerHTML = `Seu Índice de Massa Corporal (IMC) é de ${imc.toFixed(2)} Kg/m²`
+            
         }
-    </script>
+        </script>
 </body>
 </html>
