@@ -96,27 +96,30 @@
                     </label>
                     <p>
                         <input type="button" value="Mulher" name="sexo" id="fem" onclick="mulher()">
-                        <input type="button" value="Homem" name="sexo" id="masc" onclick="homem">
+                        <input type="button" value="Homem" name="sexo" id="masc" onclick="homem()">
                     </p>
                 </div>
-                <div>
+                <div class="inputs">
                     <label for="idade">Idade:</label>
-                    <p><input type="text" name="idade" id="idade" placeholder="Ex: 35" required> anos</p>
+                    <p><input type="number" name="idade" id="idade" placeholder="Ex: 35"> anos</p>
+                    <span id="alertaIdade"></span>
                 </div>
                 <div>
                     <label for="altura">Altura:</label>
-                    <p><input type="text" name="altura" id="altura" placeholder="Ex: 165" required> cm</p>
+                    <p><input type="number" name="altura" id="altura" placeholder="Ex: 165"> cm</p>
+                    <span id="alertaAltura"></span>
                 </div>
                 <div>
                     <label for="peso">Peso:</label>
-                    <p><input type="text" name="peso" id="peso" placeholder="Ex: 62,5" required> kg</p>
+                    <p><input type="number" name="peso" id="peso" placeholder="Ex: 62,5"> kg</p>
+                    <span id="alertaPeso"></span>
                 </div>
                 <input type="button" value="CALCULAR" onclick="calculaimc()">
             </form>
             <article>
                 <aside>
-                    <p id="res"></p>
-                    <p id="resc"></p>
+                    <p id="resm"></p>
+                    <p id="rescm"></p>
                     <table class="imcmasc">
                         <tr>
                             <th></th>
@@ -146,8 +149,8 @@
                     </table>
                 </aside>
                 <aside>
-                    <p></p>
-                    <p></p>
+                    <p id="resf"></p>
+                    <p id="rescf"></p>
                     <table class="imcfem">
                         <tr>
                             <th></th>
@@ -155,24 +158,24 @@
                             <th>PESO</th>
                         </tr>
                         <tr>
-                            <td>Magreza</td>
-                            <td>&lt; 15.9 kg</td>
-                            <td>&lt; 80.5 kg</td>
+                            <td class="magreza">Magreza</td>
+                            <td class="magreza">&lt; 15.9 kg</td>
+                            <td class="magreza">&lt; 80.5 kg</td>
                         </tr>
                         <tr>
-                            <td>Normal</td>
-                            <td>15.9 a 24.2</td>
-                            <td>80.5 a 122.5 kg</td>
+                            <td class="normal">Normal</td>
+                            <td class="normal">15.9 a 24.2</td>
+                            <td class="normal">80.5 a 122.5 kg</td>
                         </tr>
                         <tr>
-                            <td>Sobrepeso</td>
-                            <td>24.2 a 28.8</td>
-                            <td>122.5 a 145.8 kg</td>
+                            <td class="sobrepeso">Sobrepeso</td>
+                            <td class="sobrepeso">24.2 a 28.8</td>
+                            <td class="sobrepeso">122.5 a 145.8 kg</td>
                         </tr>
                         <tr>
-                            <td>Obesidade</td>
-                            <td>&gt; 28.8</td>
-                            <td>&gt; 145.8 kg</td>
+                            <td class="obeso">Obesidade</td>
+                            <td class="obeso">&gt; 28.8</td>
+                            <td class="obeso">&gt; 145.8 kg</td>
                         </tr>
                     </table>
                 </aside>
@@ -205,19 +208,84 @@
         </div>
     </footer>
     <script>
+        var m = document.getElementById('masc')
+        var f = document.getElementById('fem')
+        var checkm = false
+        var checkf = false
+        var tabelaf = document.querySelector(".imcfem")
+        var tabelam = document.querySelector(".imcmasc")
+        var lmagro = document.querySelector('.magreza')
+        var lnormal = document.querySelector('.normal')
+        var lsobrepeso = document.querySelector('sobrepeso')
+        var lobeso = document.querySelector('obeso')
         function mulher(){
-        let f = document.getElementById('fem')
-        f.style.backgroundColor = 'plum'
-        f.style.border = '1px solid rgba(248, 180, 248, 0.096)'
+            f.style.backgroundColor = 'plum'
+            f.style.border = '1px solid rgba(248, 180, 248, 0.096)'
+            m.style.backgroundColor = 'rgba(100, 148, 237, 0.041)'
+            m.style.border = '1px solid cornflowerblue'
+            checkf = true
+            checkm = false
         }
         function homem(){
-            if(mulher()){
-                sexo = 'Masculino'
-            }
+            m.style.backgroundColor = 'cornflowerblue';
+            m.style.border = '1px solid rgba(100, 148, 237, 0.041)';
+            f.style.backgroundColor = 'rgba(248, 180, 248, 0.096)';
+            f.style.border = '1px solid plum';
+            checkf = false;
+            checkm = true ; 
         }
         function calculaimc(){
-            if(mulher()){
-                document.querySelector("imcfem").display = 'block'
+            var idade = document.getElementById('idade');
+            var altura = document.getElementById('altura');
+            var peso = document.getElementById('peso');
+            var alertaIdade = document.getElementById('alertaIdade');
+            var alertaAltura = document.getElementById('alertaAltura');
+            var alertaPeso = document.getElementById('alertaPeso');
+            if (checkf == true){
+                tabelaf.style.display = 'block';
+                tabelam.style.display = 'none';
+            }
+            else{
+                if(checkm == true){
+                    tabelaf.style.display = 'none';
+                    tabelam.style.display = 'block';
+                }
+            }
+            var camposVazios = false;
+            if (idade.value === ""){
+                alertaIdade.innerHTML = 'Preenchimento obrigatório!';
+                alertaIdade.style.color = 'red';
+                idade.style.border = '1px solid red';
+                camposVazios = true;
+            }else{
+                if(idade.value > 119){
+                    alertaIdade.innerHTML = 'Idade máxima: 119 anos';
+                    alertaIdade.style.color = 'red';
+                    idade.style.border = '1px solid red';
+
+                }else{
+                alertaIdade.innerHTML = "";
+                idade.style.border = '1px solid #bababa';
+                }
+            }
+            
+            if (altura.value === ""){
+                alertaAltura.innerHTML = 'Preenchimento obrigatório!';
+                alertaAltura.style.color = 'red';
+                altura.style.border = '1px solid red';
+                camposVazios = true;
+            }else{
+                alertaAltura.innerHTML = "";
+                altura.style.border = '1px solid #bababa';
+            }
+            if (peso.value === ""){
+                alertaPeso.innerHTML = 'Preenchimento obrigatório!';
+                alertaPeso.style.color = 'red';
+                peso.style.border = '1px solid red';
+                camposVazios = true;
+            }else{
+                alertaPeso.innerHTML = "";
+                peso.style.border = '1px solid #bababa';
             }
         }
     </script>

@@ -324,6 +324,7 @@ section{
     gap: none;
     border: 1px solid cornflowerblue;
     border-radius: 10px;
+    transition: 0.5s;
 }
 .calc>form>p{
     font-size: 13pt;
@@ -349,6 +350,12 @@ section{
     border: 1px solid #bababa;
     border-radius: 5px;
 }
+.calc>form>.inputs>p>input:focus{
+    border: 1px solid #bababa;
+}
+.calc>form>div>span{
+    font-size: 10pt;
+}
 .sexo>p{
     display: flex;
     justify-content: center;
@@ -364,10 +371,6 @@ section{
 .sexo>p>#masc{
     border: 1px solid cornflowerblue;
     background-color: rgba(100, 148, 237, 0.041);
-}
-.sexo>p>#masc:focus{
-    border: 1px solid rgba(100, 148, 237, 0.041);
-    background-color: cornflowerblue;
 }
 .calc>form>input[type = "button"]{
     background-color: rgb(96, 141, 224);
@@ -389,6 +392,7 @@ table{
     background-color: #f0ecec;
     border-radius: 10px;
     border: 0px;
+    transition: 0.5s;
 }
 
 th,td{
