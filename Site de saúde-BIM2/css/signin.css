@@ -206,9 +206,9 @@ button{
     display: none;
 }
 .cadastro {
-    max-width: 400px;
+    max-width: 500px;
     min-width: 300px;
-    max-height: 450px;
+    max-height: 650px;
     background-color: rgba(240, 248, 255, 0.507);
     backdrop-filter: blur(5px);
     border-radius: 50px;
@@ -257,7 +257,7 @@ button{
 }
 
 .cadastro form button {
-    margin: auto;
+    margin: 50px auto;
     padding-left: 30px;padding-right: 30px;
     height: 50px;
     border-radius: 15px;
@@ -266,7 +266,9 @@ button{
     background-color: rgb(218, 155, 38);
     color: #f0e5e5;
 }
-
+label{
+    margin-top: 30px;
+}
 .cadastro form button:hover {
     font-size: 20px;
     transform: scale(1.1);

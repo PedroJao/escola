@@ -206,9 +206,9 @@ button{
     display: none;
 }
 .login {
-    max-width: 400px;
+    max-width: 500px;
     min-width: 300px;
-    max-height: 450px;
+    max-height: 650px;
     background-color: rgba(240, 248, 255, 0.514);
     backdrop-filter: blur(5px);
     border-radius: 50px;
@@ -265,7 +265,7 @@ button{
 }
 
 .login form button {
-    margin: 50px auto;
+    margin: 100px auto;
     padding-left: 50px;padding-right: 50px;
     height: 50px;
     border-radius: 15px;
@@ -274,7 +274,9 @@ button{
     background-color: rgb(218, 155, 38);
     color: #f0e5e5;
 }
-
+label{
+    margin-top: 30px;
+}
 .login form button:hover {
     font-size: 26px;
     transform: scale(1.1);
