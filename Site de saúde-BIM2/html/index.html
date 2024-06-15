@@ -260,53 +260,39 @@
                     condicao = 'magreza'
                     rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
                     lmagro.style.backgroundColor = 'bisque'
-                }else{
-                    if(imc >= 16 && imc >24.2){
+                }else if(imc >= 16 && imc >24.2){
                         condicao = 'normal'
                         rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
                         lnormal.style.backgroundColor = 'lightgreen'
-                    }else{
-                        if(imc >= 24.2 && imc < 28.8){
+                    }else if(imc >= 24.2 && imc < 28.8){
                             condicao = 'sobrepeso'
                             rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
                             lsobrepeso.style.backgroundColor = 'lightsalmon'
-                        }else{
-                            if(imc > 28.8){
+                        }else if(imc > 28.8){
                                 condicao = 'obesidade'
                                 rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
                                 lobeso.style.backgroundColor = 'lightcoral'
                             }
-                        }
-                    }
-                }
-            }else{
-                if(checkm == true){
+            }else if(checkm == true){
                         tabelaf.style.display = 'none';
                         tabelam.style.display = 'block';
                         if(imc < 16){
                         condicao = 'magreza'
                         rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
                         lmagro.style.backgroundColor = 'bisque'
-                        }else{
-                        if(imc >= 16 && imc >23.6){
+                        }else if(imc >= 16 && imc >23.6){
                             condicao = 'normal'
                             rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
                             lnormal.style.backgroundColor = 'lightgreen'
-                        }else{
-                            if(imc >= 23.6 && imc < 27.8){
+                        }else if(imc >= 23.6 && imc < 27.8){
                                 condicao = 'sobrepeso'
                                 rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
                                 lsobrepeso.style.backgroundColor = 'lightsalmon'
-                            }else{
-                                if(imc > 27.8){
+                            }else if(imc > 27.8){
                                     condicao = 'obesidade'
                                     rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
                                     lobeso.style.backgroundColor = 'lightcoral'
                                 }
-                            }
-                        }
-                    }
-                }
             }
             var camposVazios = false;
             if (idade.value === ""){
@@ -314,8 +300,7 @@
                 alertaIdade.style.color = 'red';
                 idade.style.border = '1px solid red';
                 camposVazios = true;
-            }else{
-                if (idade.value > 119){
+            }else if (idade.value > 119){
                     alertaIdade.innerHTML = 'Idade máxima: 119 anos';
                     alertaIdade.style.color = 'red';
                     idade.style.border = '1px solid red';     
@@ -324,14 +309,12 @@
                 idade.style.border = '1px solid #bababa';
                 }
                 camposVazios = false
-            }
             if (altura.value === ""){
                 alertaAltura.innerHTML = 'Preenchimento obrigatório!';
                 alertaAltura.style.color = 'red';
                 altura.style.border = '1px solid red';
                 camposVazios = true;
-            }else{
-                if (altura.value > 225){
+            }else if (altura.value > 225){
                     alertaAltura.innerHTML = 'Altura máxima: 225cm';
                     alertaAltura.style.color = 'red';
                     altura.style.border = '1px solid red';    
@@ -340,14 +323,12 @@
                     altura.style.border = '1px solid #bababa';
                 }
                 camposVazios = false
-            }
             if (peso.value === ""){
                 alertaPeso.innerHTML = 'Preenchimento obrigatório!';
                 alertaPeso.style.color = 'red';
                 peso.style.border = '1px solid red';
                 camposVazios = true;
-            }else{
-                if (peso.value > 300){
+            }else if (peso.value > 300){
                 alertaPeso.innerHTML = 'Peso máximo: 300Kg';
                 alertaPeso.style.color = 'red';
                 peso.style.border = '1px solid red';
@@ -357,7 +338,6 @@
                     peso.style.border = '1px solid #bababa';
                 }
                 camposVazios = false
-            }
             if(camposVazios === true){
                 tabelam.style.display = 'none';
                 tabelaf.style.display = 'none';
