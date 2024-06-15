@@ -214,10 +214,18 @@
         var checkf = false
         var tabelaf = document.querySelector(".imcfem")
         var tabelam = document.querySelector(".imcmasc")
-        var lmagro = document.querySelector('.magreza')
-        var lnormal = document.querySelector('.normal')
-        var lsobrepeso = document.querySelector('sobrepeso')
-        var lobeso = document.querySelector('obeso')
+        var lmagro = document.getElementById('magreza')
+        var lnormal = document.getElementById('normal')
+        var lsobrepeso = document.getElementById('sobrepeso')
+        var lobeso = document.getElementById('obeso')
+        var pesoIdealm = null
+        var pesoIdealf = null
+        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        var imc = peso.value / (altura.value / 100) ** 2
+        var resm = document.getElementById('resm')
+        var resf = document.getElementById('resf')
+        var rescm = document.getElementById('rescm')
+        var rescf = document.getElementById('rescf')
         function mulher(){
             f.style.backgroundColor = 'plum'
             f.style.border = '1px solid rgba(248, 180, 248, 0.096)'
@@ -225,6 +233,7 @@
             m.style.border = '1px solid cornflowerblue'
             checkf = true
             checkm = false
+            pesoIdealf = '46.5 e 70.7 Kg'
         }
         function homem(){
             m.style.backgroundColor = 'cornflowerblue';
@@ -233,9 +242,8 @@
             f.style.border = '1px solid plum';
             checkf = false;
             checkm = true ; 
+            pesoIdealm = '46.8 e 69 Kg'
         }
-
-        
         var idade = document.getElementById('idade');
         var altura = document.getElementById('altura');
         var peso = document.getElementById('peso');
@@ -243,14 +251,61 @@
         var alertaAltura = document.getElementById('alertaAltura');
         var alertaPeso = document.getElementById('alertaPeso');
         function calculaimc(){
+            var condicao = null
+            res.innerHTML = `Seu Índice de Massa Corporal (IMC) é de ${imc.toFixed(2)} kg/m²`
             if (checkf == true){
                 tabelaf.style.display = 'block';
                 tabelam.style.display = 'none';
-            }
-            else{
+                if(imc < 15.9){
+                    condicao = 'magreza'
+                    rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
+                    lmagro.style.backgroundColor = 'bisque'
+                }else{
+                    if(imc >= 16 && imc >24.2){
+                        condicao = 'normal'
+                        rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
+                        lnormal.style.backgroundColor = 'lightgreen'
+                    }else{
+                        if(imc >= 24.2 && imc < 28.8){
+                            condicao = 'sobrepeso'
+                            rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
+                            lsobrepeso.style.backgroundColor = 'lightsalmon'
+                        }else{
+                            if(imc > 28.8){
+                                condicao = 'obesidade'
+                                rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
+                                lobeso.style.backgroundColor = 'lightcoral'
+                            }
+                        }
+                    }
+                }
+            }else{
                 if(checkm == true){
-                    tabelaf.style.display = 'none';
-                    tabelam.style.display = 'block';
+                        tabelaf.style.display = 'none';
+                        tabelam.style.display = 'block';
+                        if(imc < 16){
+                        condicao = 'magreza'
+                        rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
+                        lmagro.style.backgroundColor = 'bisque'
+                        }else{
+                        if(imc >= 16 && imc >23.6){
+                            condicao = 'normal'
+                            rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
+                            lnormal.style.backgroundColor = 'lightgreen'
+                        }else{
+                            if(imc >= 23.6 && imc < 27.8){
+                                condicao = 'sobrepeso'
+                                rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
+                                lsobrepeso.style.backgroundColor = 'lightsalmon'
+                            }else{
+                                if(imc > 27.8){
+                                    condicao = 'obesidade'
+                                    rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
+                                    lobeso.style.backgroundColor = 'lightcoral'
+                                }
+                            }
+                        }
+                    }
                 }
             }
             var camposVazios = false;
@@ -268,6 +323,7 @@
                 alertaIdade.innerHTML = "";
                 idade.style.border = '1px solid #bababa';
                 }
+                camposVazios = false
             }
             if (altura.value === ""){
                 alertaAltura.innerHTML = 'Preenchimento obrigatório!';
@@ -283,6 +339,7 @@
                     alertaAltura.innerHTML = "";
                     altura.style.border = '1px solid #bababa';
                 }
+                camposVazios = false
             }
             if (peso.value === ""){
                 alertaPeso.innerHTML = 'Preenchimento obrigatório!';
@@ -299,18 +356,12 @@
                     alertaPeso.innerHTML = "";
                     peso.style.border = '1px solid #bababa';
                 }
+                camposVazios = false
             }
-            if(camposVazios == true){
+            if(camposVazios === true){
                 tabelam.style.display = 'none';
                 tabelaf.style.display = 'none';
             }
-            var imc = peso.value / (altura.value / 100) ** 2
-            var resm = document.getElementById('resm')
-            var resf = document.getElementById('resf')
-            var rescm = document.getElementById('rescm')
-            var rescf = document.getElementById('rescf')
-            resm.innerHTML = `Seu Índice de Massa Corporal (IMC) é de ${imc.toFixed(2)} Kg/m²`
-            
         }
         </script>
 </body>
