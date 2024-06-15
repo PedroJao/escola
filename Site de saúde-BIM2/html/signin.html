@@ -24,20 +24,25 @@
     <main class="main3 cadastro" id="main3">
         <img src="..//logo.png" alt="" style="width: 180px;" id="logocad">
         <h1>Inscreva-se</h1>
-        <form action="submit">
+        <form method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
+            <span id="alertaNome"></span>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+            <span id="alertaEmail"></span>
             <label for="senha1">Senha:</label>
             <input type="password" id="senha1" name="senha1" required>
+            <span id="alertaSenha"></span>
             <label for="senhaofc">Confirme a senha:</label>
             <input type="password" id="senhaofc" name="senhaofc" required>
-            <button type="submit" id="submit" name="submit">Inscrever-se</button>
+            <span id="alertaSenhaofc"></span>
+            <button type="button" id="submit" name="submit" onclick="cadastrar()">Inscrever-se</button>
         </form>
     </main>
     <footer class="foot3" id="foot3">
         <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
     </footer>
+    <script src="cadastro.js"></script>
 </body>
 </html>

@@ -24,16 +24,19 @@
     <main class="main2 login" id="main2">
         <img src="..//logo.png" alt="" style="width: 180px;" id="logolog">
         <h1>Login</h1>
-        <form action="submit">
+        <form method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+            <span id="alertaEmail"></span>
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
-            <button type="submit" id="submit" name="submit">Entrar</button>
+            <span id="alertaSenha"></span>
+            <button type="button" id="submit" name="submit" onclick="entrar()" >Entrar</button>
         </form>
     </main>
     <footer class="foot2" id="foot2">
         <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
     </footer>
+    <script src="login.js"></script>
 </body>
 </html>
