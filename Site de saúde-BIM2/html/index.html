@@ -118,9 +118,9 @@
             </form>
             <article>
                 <aside>
-                    <p id="resm"></p>
-                    <p id="rescm"></p>
-                    <table class="imcmasc">
+                    <p id="res">sdgcrgfsd</p>
+                    <p id="resc"></p>
+                    <table class="imc" id="imc">
                         <tr>
                             <th></th>
                             <th>IMC</th>
@@ -128,54 +128,23 @@
                         </tr>
                         <tr>
                             <td class="magreza">Magreza</td>
-                            <td class="magreza">&lt; 16 kg</td>
-                            <td class="magreza">&lt; 81 kg</td>
+                            <td class="magreza">&lt; 16</td>
+                            <td class="magreza">&lt; 46.8 kg</td>
                         </tr>
                         <tr>
                             <td class="normal">Normal</td>
                             <td class="normal">16 a 23.6</td>
-                            <td class="normal">81 a 119.5 kg</td>
+                            <td class="normal">46.8 a 69 kg</td>
                         </tr>
                         <tr>
                             <td class="sobrepeso">Sobrepeso</td>
                             <td class="sobrepeso">23.6 a 27.8</td>
-                            <td class="sobrepeso">119.5 a 140.7 kg</td>
+                            <td class="sobrepeso">69 a 81.3 kg</td>
                         </tr>
                         <tr>
                             <td class="obeso">Obesidade</td>
                             <td class="obeso">&gt; 27.8</td>
-                            <td class="obeso">&gt; 140.7 kg</td>
-                        </tr>
-                    </table>
-                </aside>
-                <aside>
-                    <p id="resf"></p>
-                    <p id="rescf"></p>
-                    <table class="imcfem">
-                        <tr>
-                            <th></th>
-                            <th>IMC</th>
-                            <th>PESO</th>
-                        </tr>
-                        <tr>
-                            <td class="magreza">Magreza</td>
-                            <td class="magreza">&lt; 15.9 kg</td>
-                            <td class="magreza">&lt; 80.5 kg</td>
-                        </tr>
-                        <tr>
-                            <td class="normal">Normal</td>
-                            <td class="normal">15.9 a 24.2</td>
-                            <td class="normal">80.5 a 122.5 kg</td>
-                        </tr>
-                        <tr>
-                            <td class="sobrepeso">Sobrepeso</td>
-                            <td class="sobrepeso">24.2 a 28.8</td>
-                            <td class="sobrepeso">122.5 a 145.8 kg</td>
-                        </tr>
-                        <tr>
-                            <td class="obeso">Obesidade</td>
-                            <td class="obeso">&gt; 28.8</td>
-                            <td class="obeso">&gt; 145.8 kg</td>
+                            <td class="obeso">&gt; 81.3 kg</td>
                         </tr>
                     </table>
                 </aside>
@@ -207,142 +176,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        var m = document.getElementById('masc')
-        var f = document.getElementById('fem')
-        var checkm = false
-        var checkf = false
-        var tabelaf = document.querySelector(".imcfem")
-        var tabelam = document.querySelector(".imcmasc")
-        var lmagro = document.getElementById('magreza')
-        var lnormal = document.getElementById('normal')
-        var lsobrepeso = document.getElementById('sobrepeso')
-        var lobeso = document.getElementById('obeso')
-        var pesoIdealm = null
-        var pesoIdealf = null
-        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-        var imc = peso.value / (altura.value / 100) ** 2
-        var resm = document.getElementById('resm')
-        var resf = document.getElementById('resf')
-        var rescm = document.getElementById('rescm')
-        var rescf = document.getElementById('rescf')
-        function mulher(){
-            f.style.backgroundColor = 'plum'
-            f.style.border = '1px solid rgba(248, 180, 248, 0.096)'
-            m.style.backgroundColor = 'rgba(100, 148, 237, 0.041)'
-            m.style.border = '1px solid cornflowerblue'
-            checkf = true
-            checkm = false
-            pesoIdealf = '46.5 e 70.7 Kg'
-        }
-        function homem(){
-            m.style.backgroundColor = 'cornflowerblue';
-            m.style.border = '1px solid rgba(100, 148, 237, 0.041)';
-            f.style.backgroundColor = 'rgba(248, 180, 248, 0.096)';
-            f.style.border = '1px solid plum';
-            checkf = false;
-            checkm = true ; 
-            pesoIdealm = '46.8 e 69 Kg'
-        }
-        var idade = document.getElementById('idade');
-        var altura = document.getElementById('altura');
-        var peso = document.getElementById('peso');
-        var alertaIdade = document.getElementById('alertaIdade');
-        var alertaAltura = document.getElementById('alertaAltura');
-        var alertaPeso = document.getElementById('alertaPeso');
-        function calculaimc(){
-            var condicao = null
-            res.innerHTML = `Seu Índice de Massa Corporal (IMC) é de ${imc.toFixed(2)} kg/m²`
-            if (checkf == true){
-                tabelaf.style.display = 'block';
-                tabelam.style.display = 'none';
-                if(imc < 15.9){
-                    condicao = 'magreza'
-                    rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
-                    lmagro.style.backgroundColor = 'bisque'
-                }else if(imc >= 16 && imc >24.2){
-                        condicao = 'normal'
-                        rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
-                        lnormal.style.backgroundColor = 'lightgreen'
-                    }else if(imc >= 24.2 && imc < 28.8){
-                            condicao = 'sobrepeso'
-                            rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
-                            lsobrepeso.style.backgroundColor = 'lightsalmon'
-                        }else if(imc > 28.8){
-                                condicao = 'obesidade'
-                                rescf.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealf}.`
-                                lobeso.style.backgroundColor = 'lightcoral'
-                            }
-            }else if(checkm == true){
-                        tabelaf.style.display = 'none';
-                        tabelam.style.display = 'block';
-                        if(imc < 16){
-                        condicao = 'magreza'
-                        rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
-                        lmagro.style.backgroundColor = 'bisque'
-                        }else if(imc >= 16 && imc >23.6){
-                            condicao = 'normal'
-                            rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
-                            lnormal.style.backgroundColor = 'lightgreen'
-                        }else if(imc >= 23.6 && imc < 27.8){
-                                condicao = 'sobrepeso'
-                                rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
-                                lsobrepeso.style.backgroundColor = 'lightsalmon'
-                            }else if(imc > 27.8){
-                                    condicao = 'obesidade'
-                                    rescm.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como ${condicao} para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre ${pesoIdealm}.`
-                                    lobeso.style.backgroundColor = 'lightcoral'
-                                }
-            }
-            var camposVazios = false;
-            if (idade.value === ""){
-                alertaIdade.innerHTML = 'Preenchimento obrigatório!';
-                alertaIdade.style.color = 'red';
-                idade.style.border = '1px solid red';
-                camposVazios = true;
-            }else if (idade.value > 119){
-                    alertaIdade.innerHTML = 'Idade máxima: 119 anos';
-                    alertaIdade.style.color = 'red';
-                    idade.style.border = '1px solid red';     
-                }else{
-                alertaIdade.innerHTML = "";
-                idade.style.border = '1px solid #bababa';
-                }
-                camposVazios = false
-            if (altura.value === ""){
-                alertaAltura.innerHTML = 'Preenchimento obrigatório!';
-                alertaAltura.style.color = 'red';
-                altura.style.border = '1px solid red';
-                camposVazios = true;
-            }else if (altura.value > 225){
-                    alertaAltura.innerHTML = 'Altura máxima: 225cm';
-                    alertaAltura.style.color = 'red';
-                    altura.style.border = '1px solid red';    
-                }else{
-                    alertaAltura.innerHTML = "";
-                    altura.style.border = '1px solid #bababa';
-                }
-                camposVazios = false
-            if (peso.value === ""){
-                alertaPeso.innerHTML = 'Preenchimento obrigatório!';
-                alertaPeso.style.color = 'red';
-                peso.style.border = '1px solid red';
-                camposVazios = true;
-            }else if (peso.value > 300){
-                alertaPeso.innerHTML = 'Peso máximo: 300Kg';
-                alertaPeso.style.color = 'red';
-                peso.style.border = '1px solid red';
-                    
-                }else{
-                    alertaPeso.innerHTML = "";
-                    peso.style.border = '1px solid #bababa';
-                }
-                camposVazios = false
-            if(camposVazios === true){
-                tabelam.style.display = 'none';
-                tabelaf.style.display = 'none';
-            }
-        }
-        </script>
+    <script src="main.js"></script>
 </body>
 </html>
