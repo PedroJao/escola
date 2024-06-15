@@ -22,10 +22,10 @@ function homem(){
 var camposVazios = true;
 function calculaimc(){
     var tabela = document.getElementById("imc")
-    var lmagro = document.getElementsByClassName('magreza')
-    var lnormal = document.getElementsByClassName('normal')
-    var lsobrepeso = document.getElementsByClassName('sobrepeso')
-    var lobeso = document.getElementsByClassName('obeso')
+    var lmagro = document.querySelector('.magreza')
+    var lnormal = document.querySelector('.normal')
+    var lsobrepeso = document.querySelector('.sobrepeso')
+    var lobeso = document.querySelector('.obeso')
     var pesoIdeal = '46.8 e 69 Kg'
     var res = document.getElementById('res')
     res.innerHTML = ""
@@ -84,25 +84,37 @@ function calculaimc(){
         peso.style.border = '1px solid #bababa';
         camposVazios = false
     }
-    res.innerHTML = `Seu Índice de Massa Corporal (IMC) é de ${imc.toFixed(2)} kg/m²`
     if(idade.value !== "" && altura.value !== "" && peso.value !== ""){
+        res.innerHTML = `Seu Índice de Massa Corporal (IMC) é de <strong>${imc.toFixed(2)} Kg/m²</strong>`
         tabela.style.display = 'block';
         if(imc < 16){
             let condicao = 'magreza'
             resc.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como <strong>${condicao}</strong> para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre <strong>${pesoIdeal}</strong>.`
             lmagro.style.backgroundColor = 'bisque'
+            lnormal.style.backgroundColor = '#f0ecec'
+            lsobrepeso.style.backgroundColor = '#f0ecec'
+            lobeso.style.backgroundColor = '#f0ecec'
         }else if(imc >= 16 && imc < 23.6){
             let condicao = 'normal'
             resc.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como <strong>${condicao}</strong> para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre  <strong>${pesoIdeal}</strong>.`
             lnormal.style.backgroundColor = 'lightgreen'
+            lmagro.style.backgroundColor = '#f0ecec'
+            lsobrepeso.style.backgroundColor = 'background-color: #f0ecec'
+            lobeso.style.backgroundColor = '#f0ecec'
         }else if(imc >= 23.6 && imc < 27.8){
             condicao = 'sobrepeso'
             resc.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como <strong>${condicao}</strong> para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre  <strong>${pesoIdeal}</strong>.`
             lsobrepeso.style.backgroundColor = 'lightsalmon'
+            lnormal.style.backgroundColor = '#f0ecec'
+            lmagro.style.backgroundColor = '#f0ecec'
+            lobeso.style.backgroundColor = '#f0ecec'
         }else if(imc > 27.8){
             let condicao = 'obesidade'
             resc.innerHTML = `De acordo com a Organização Mundial da Saúde, seu IMC é considerado como <strong>${condicao}</strong> para a sua altura. Para manter o valor de IMC normal, seu peso pode variar entre  <strong>${pesoIdeal}</strong>.`
             lobeso.style.backgroundColor = 'lightcoral'
+            lsobrepeso.style.backgroundColor = '#f0ecec'
+            lnormal.style.backgroundColor = '#f0ecec'
+            lmagro.style.backgroundColor = '#f0ecec'
         }
     }
 }

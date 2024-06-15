@@ -394,9 +394,12 @@ table{
     border: 0px;
     transition: 0.5s;
 }
-#resc{
+#resc, #res{
+    margin-bottom: 10px;
     max-width: 750px;
+    font-size: 13pt;
 }
+
 th,td{
     width: 250px;
     justify-content: center;
